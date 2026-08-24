@@ -67,6 +67,13 @@ Neste projeto, pratiquei conceitos fundamentais de programação em Python, como
 * Adicionar edição e exclusão de registros.
 * Criar uma interface gráfica.
 
+
+## 📋 Documentação
+O levantamento e a documentação dos requisitos do projeto estão disponíveis em:
+
+docs/requerimento.md
+
+---
 ## 👨‍💻 Autor
 
 **Wilson Oliveira**
