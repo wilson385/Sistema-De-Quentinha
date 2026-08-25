@@ -62,7 +62,7 @@ Neste projeto, pratiquei conceitos fundamentais de programação em Python, como
 
 ## 🚧 Próximas melhorias
 
-* Armazenar os dados em arquivo ou banco de dados.
+* Armazenar os dados em arquivo ou banco de dados. ✅ Concluído
 * Permitir consultar clientes cadastrados.
 * Adicionar edição e exclusão de registros.
 * Criar uma interface gráfica.
