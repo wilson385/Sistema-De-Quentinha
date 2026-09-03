@@ -25,11 +25,12 @@ Automatizar e agilizar o registro das vendas de quentinhas, o cálculo do valor 
  # requisitos funcionais
  <!-- Tudo que o sistem faz -->
 
-- RF01 Receber a quantidade de pessoas cadastrada.
-- Rf02 Para cada pessoa cadastrada, pergunte o nome, quantidade de quentinha compradas.
+- RF01 Exibi uma mensagem de saudação na tela.
+- Rf02 Pergunte o nome, quantidade de quentinha compradas.
 - RF03 calcule o valor que cada cliente deve, e exibe na tela.
 - RF04 soma o valor de todos os clientes, gerando o valor total de lucros na tela.
-- RF05 — armazenar os dados das vendas em um arquivo Excel
+- RF05 Pergunte se o usuário deseja continuar cadastrando ou não. 
+- RF06 armazenar os dados das vendas em um arquivo Excel
 
 # requitos não funcionais
 <!-- Como o sistema deve funcionar -->
@@ -43,10 +44,11 @@ Automatizar e agilizar o registro das vendas de quentinhas, o cálculo do valor 
 <!-- regra que determina como aquilo deve funcionar -->
 
 - RN01 Cada quentinha custa R$16
-- RN02 Quantidade pessoas cadastrada deve ser maior que 0
-- RN03 Quantidade de quentinha dever ser maior que 0
-- RN04 Calculo do valor de cada cliente deve ser a Quantidade de quentinha deve ser x 16
-- RN05 Cliente pode comprar várias Quentinhas
+- RN02 Quantidade de quentinha dever ser maior que 0
+- RN03 Calculo do valor de cada cliente deve ser a Quantidade de quentinha deve ser x 16
+- RN04 Cliente pode comprar várias Quentinhas
+- RN05 Digite s para continuar cadastrando e n para encerrar
+- RN06 Se o usuário não digitar s ou n, peça a ele para digitar uma informação válida
 
 # Dúvidas para o cliente
 
