@@ -13,7 +13,7 @@ O projeto foi criado para substituir um controle manual de vendas, reduzindo err
 * Registro da quantidade de quentinhas compradas.
 * Cálculo automático do valor da compra.
 * Cálculo do total das vendas.
-* Validação de valores maiores que zero.
+* Validação de texto e valores numérico.
 
 ## 💰 Regra de negócio
 
