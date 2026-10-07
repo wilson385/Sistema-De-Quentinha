@@ -31,7 +31,7 @@ Automatizar e agilizar o registro das vendas de quentinhas, o cálculo do valor 
 - RF04 calcule o valor que cada cliente deve, e exibe na tela.
 - RF05 soma o valor de todos os clientes, gerando o valor total de lucros na tela.
 - RF06 Pergunte se o usuário deseja continuar cadastrando ou não. 
-- RF07 armazenar os dados das vendas em um arquivo Excel
+- RF07 armazenar os dados das vendas em um arquivo Excel.
 
 # requitos não funcionais
 <!-- Como o sistema deve funcionar -->

@@ -11,7 +11,6 @@ dados_clientes = []
 # valor da quentinha
 valor_quentinha = 16
 total = 0
-valor = True
 continuar = True
 
 # saudação
@@ -20,7 +19,9 @@ print("Seja Bem-vindo ao gerenciado de quentinhas!")
 print("------------------------------------------------------------------")
 
 # while continuar == True
-while continuar:    
+while continuar:
+
+  valor = True
 
   nome = input("Seu nome: ")
   # enquanto nome for string vazia ou nome for numero, faça:
@@ -71,9 +72,9 @@ while continuar:
       continuar = True
       
 # exibe a soma total de todos os clientes
-  print("------------------------------------------------------------------")
-  print("Total de Lucro: ", total)
-  print("------------------------------------------------------------------")
+print("------------------------------------------------------------------")
+print("Total de Lucro: ", total)
+print("------------------------------------------------------------------")
   
 # Esse arquivo existe nesse caminho?
 # O arquivo quentinha.xlsx existe?
@@ -89,12 +90,55 @@ else:
 pagina = planilha.active
 # nome para a aba
 pagina.title = "Quentinhas"
-# adicionando uma linha na planilha | Nome | Quantidade | Valor Unitário | 
-pagina.append(["Nome", "Quantidade", "Valor Devedor"])
+
+# se a célula A1 estiver vazia, então adicione uma linha com os títulos das colunas
+if  pagina["A1"].value is None:  
+  # adicionando uma linha na planilha | Nome | Quantidade | Valor Unitário | 
+  pagina.append(["Nome", "Quantidade", "Valor Devedor"])
+
+# "Por enquanto, não encontrei nenhuma linha de total."
+linha_total = None
+
+# pagina.max_row  quantidade/posição da última linha utilizada da planilha.
+# max_row faz isso: Qual é o número da última linha utilizada?
+# O + 1 existe porque o range() não inclui o número final.
+# "Para cada número de linha existente na planilha, faça alguma coisa."
+for linha in range(1, pagina.max_row + 1):
+  #  "Pegue a célula localizada na linha X e coluna 1 (A).
+  # "Se o valor da célula da coluna A dessa linha for igual a TOTAL GERAL..."
+  if pagina.cell(linha, 1).value == "TOTAL GERAL":
+    #  "Então, eu encontrei a linha de total."
+     linha_total = linha
+    #  pare o for imediatamente.
+     break
+
+# Números diferentes de zero são considerados verdadeiros em uma condição.
+if linha_total:
+  # pegue o valor da célula da coluna 3 (C) dessa linha."
+   total_antigo = pagina.cell(linha_total, 3).value
+
+  #  se total_antigo estiver vazio, considere 0
+   if total_antigo is None:
+      total_antigo = 0
+
+else:
+   total_antigo = 0      
+
 # pessoa recebe a lista inteira de dados clientes a cada repetição
 # Para cada pessoa que está dentro de dados, coloque uma linha na planilha.
 for pessoa in dados_clientes:
   pagina.append(pessoa)
+
+total = total_antigo
+
+for pessoa in dados_clientes:
+    # pessoa[2] representa o valor devido pelo cliente.
+   total += pessoa[2]
+
+if linha_total:
+  #  Exclua a linha 5 inteira.
+   pagina.delete_rows(linha_total)
+
 # adiciona uma linha vazia
 pagina.append([])
 # # Adiciona o total geral UMA ÚNICA VEZ
